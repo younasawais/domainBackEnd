@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
-if(typeof process.env.PORT === "undefined"){
-    const cors = require('cors');
-    app.use(cors());}
+const cors = require('cors');
+// if(typeof process.env.PORT === "undefined"){
+//     const cors = require('cors');
+//     app.use(cors());}
+app.use(cors());
 app.use(express.json());
 require("./routes/registrationReq.js")(app);
 require("./routes/fileuploadsreq.js")(app);
