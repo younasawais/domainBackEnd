@@ -6,6 +6,7 @@ const cors = require('cors');
 //     app.use(cors());}
 app.use(cors());
 app.use(express.json());
+require('dotenv').config();
 require("./routes/registrationReq.js")(app);
 require("./routes/fileuploadsreq.js")(app);
 require("./routes/updateDataReq.js")(app);
