@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 console.log("Mongo :: " + process.env.db);
-mongoose.connect("mongodb://localhost/domain-project" || process.env.db,{ 
+mongoose.connect("mongodb://localhost/domain-project" || "mongodb+srv://domainProject:475734255Bbb@cluster0-3cx3m.mongodb.net/test?retryWrites=true&w=majority",{ 
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false})

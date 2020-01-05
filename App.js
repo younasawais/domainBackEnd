@@ -18,5 +18,5 @@ require("./routes/dataReq.js")(app);
 /******* FrontEnd connect ********/
 
 app.listen(process.env.PORT || 4000, () => {
-    console.log("Port is listening on 4000......................................................");
+    console.log("Port is listening on :" + process.env.PORT);
 });
