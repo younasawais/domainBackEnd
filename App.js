@@ -1,12 +1,14 @@
 const express = require("express");
 const app = express();
 const cors = require('cors');
-// if(typeof process.env.PORT === "undefined"){
-//     const cors = require('cors');
-//     app.use(cors());}
+if(typeof process.env.PORT === "undefined"){
+    require('dotenv').config({path : './.env.development'});
+}else{
+    require('dotenv').config({path : './.env.production'});
+}
 app.use(cors());
 app.use(express.json());
-require('dotenv').config();
+
 require("./routes/registrationReq.js")(app);
 require("./routes/fileuploadsreq.js")(app);
 require("./routes/updateDataReq.js")(app);
@@ -17,7 +19,13 @@ require("./routes/dataReq.js")(app);
  
 
 /******* FrontEnd connect ********/
+if(typeof process.env.PORT === "undefined"){
+    app.listen(4000, () => {
+        console.log("Port is listening on :" +  4000);
+    });
+}else{
+    app.listen(process.env.PORT, () => {
+        console.log("Port is listening on :" + process.env.PORT);
+    });
+}
 
-app.listen(process.env.PORT || 4000, () => {
-    console.log("Port is listening on :" + process.env.PORT);
-});
