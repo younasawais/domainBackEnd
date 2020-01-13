@@ -16,12 +16,13 @@ require("./routes/stripeUpdates.js")(app);
 require("./routes/emailActions.js")(app);
 require("./routes/paymentReq.js")(app);
 require("./routes/dataReq.js")(app);
+//require("./routes/testing.js")(app);
  
 
 /******* FrontEnd connect ********/
 if(typeof process.env.PORT === "undefined"){
-    app.listen(4000, () => {
-        console.log("Port is listening on :" +  4000);
+    app.listen(5000, () => {
+        console.log("Port is listening on :" +  5000);
     });
 }else{
     app.listen(process.env.PORT, () => {
